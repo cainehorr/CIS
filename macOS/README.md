@@ -1,2 +1,2 @@
 # CIS
-Scripts to Audit CIS compliance against macOS
+CIS Benchmark scripts for macOS
