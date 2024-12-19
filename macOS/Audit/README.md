@@ -1,7 +1,7 @@
 # CIS AUDIT-ONLY SCRIPTS
 * Audit-Only scripts to validate CIS Benchmark compliance against macOS
 * Scripts are written to be run from:
-  * Jamf (as an Extension Attribute)
+  * Jamf Pro (as an Extension Attribute)
   * Commnd Line
 
 # CIS WEBSITE REFERENCE
