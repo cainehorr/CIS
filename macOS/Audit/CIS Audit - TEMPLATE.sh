@@ -36,7 +36,7 @@
 #
 #   CHANGE CONTROL LOG
 #
-#   Version 1.0 - 20XX-XX-XX
+#   Version 1.0 - 2025-01-
 #       Initial script creation
 #       Tested against macOS 14.7.1 - Sonoma
 #
@@ -47,8 +47,9 @@ maximum_macOS_version_required="15"
 
 main(){
 	run_as_root
-    acquire_logged_in_user
+    get_processor_type
     get_os_version
+    acquire_logged_in_user
 	audit
 }
 
@@ -62,12 +63,26 @@ run_as_root(){
     fi
 }
 
-acquire_logged_in_user(){
-    currentUser=$(/usr/bin/stat -f "%Su" "/dev/console")
+get_processor_type(){
+    # processor_type="$(/usr/sbin/sysctl -n machdep.cpu.brand_string | /usr/bin/grep -e Intel | /usr/bin/awk '{print substr($1, 1, length($1)-3)}')"
+
+    processor_type="$(/usr/sbin/sysctl -n machdep.cpu.brand_string)"
+
+    if [[ ! -z $(/usr/sbin/sysctl -n machdep.cpu.brand_string | /usr/bin/grep -e Intel) ]]; then
+        processor_type="Intel"
+    elif [[ ! -z $(/usr/sbin/sysctl -n machdep.cpu.brand_string | /usr/bin/grep -e Apple) ]]; then
+        processor_type="ARM"
+    else 
+        processor_type="UNKNOWN"
+    fi
 }
 
 get_os_version(){
-    os_version="$(sudo /usr/bin/sw_vers | /usr/bin/awk -F: '/ProductVersion/ {print $2}' | /usr/bin/sed 's/^[[:space:]]*//g' | /usr/bin/cut -d. -f1)"
+    os_version="$(/usr/bin/sudo /usr/bin/sw_vers | /usr/bin/awk -F: '/ProductVersion/ {print $2}' | /usr/bin/sed 's/^[[:space:]]*//g' | /usr/bin/cut -d. -f1)"
+}
+
+acquire_logged_in_user(){
+    currentUser=$(/usr/bin/stat -f "%Su" "/dev/console")
 }
 
 audit(){

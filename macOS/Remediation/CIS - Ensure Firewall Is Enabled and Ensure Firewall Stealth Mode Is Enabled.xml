@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+      <dict>
+        <key>BlockAllIncoming</key>
+        <true/>
+        <key>EnableFirewall</key>
+        <true/>
+        <key>EnableStealthMode</key>
+        <true/>
+        <key>PayloadDisplayName</key>
+        <string>Firewall</string>
+        <key>PayloadOrganization</key>
+        <string>databricks</string>
+        <key>PayloadType</key>
+        <string>com.apple.security.firewall</string>
+        <key>Applications</key>
+        <array>
+          <dict>
+            <key>Allowed</key>
+            <true/>
+            <key>BundleID</key>
+            <string>com.paloaltonetworks.GlobalProtect</string>
+          </dict>
+          <dict>
+            <key>Allowed</key>
+            <true/>
+            <key>BundleID</key>
+            <string>com.portnox.agentpx</string>
+          </dict>
+          <dict>
+            <key>Allowed</key>
+            <true/>
+            <key>BundleID</key>
+            <string>com.zscaler.Zscaler</string>
+          </dict>
+          <dict>
+            <key>Allowed</key>
+            <true/>
+            <key>BundleID</key>
+            <string>com.qualys.agentid-service</string>
+          </dict>
+        </array>
+      </dict>
+    </array>
+</dict>
+</plist>
