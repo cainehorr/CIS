@@ -3,8 +3,8 @@
 <plist version="1.0">
     <dict>
         <key>PayloadType</key>
-        <string></string>
-        <key></key>
+        <string>com.apple.MCX.TimeMachine</string>
+        <key>AutoBackup</key>
         <true/>
     </dict>
 </plist>

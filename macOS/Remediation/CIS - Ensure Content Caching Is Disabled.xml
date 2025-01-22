@@ -3,8 +3,8 @@
 <plist version="1.0">
     <dict>
         <key>PayloadType</key>
-        <string></string>
-        <key></key>
-        <true/>
+        <string>com.apple.applicationaccess</string>
+        <key>allowContentCaching</key>
+        <false/>
     </dict>
 </plist>
