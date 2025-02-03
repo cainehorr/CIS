@@ -15,7 +15,7 @@
 ####################################################################################################
 #
 #   BENCHMARK NAME:
-#   CIS Audit - 
+#   CIS Remediation - 
 #
 #   PROFILE APPLICABILITY: 
 #   Level 
