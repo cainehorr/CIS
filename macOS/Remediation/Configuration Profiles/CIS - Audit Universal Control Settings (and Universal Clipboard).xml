@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>PayloadType</key>
+        <string>com.apple.universalcontrol</string>
+        <key>Disable</key>
+        <true/>
+    </dict>
+</plist>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>PayloadType</key>
+        <string>com.apple.coreservices.useractivityd</string>
+        <key>ClipboardSharingEnabled</key>
+        <false/>
+    </dict>
+</plist>
